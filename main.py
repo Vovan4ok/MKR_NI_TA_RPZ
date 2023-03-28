@@ -3,6 +3,7 @@ def read_data_from_the_file(file_name):
     file_info = []
     with open(file_name) as file:
         for line in file:
+            line = line.replace("\n", "")
             file_info.append(line)
 
     return file_info
@@ -16,17 +17,23 @@ def write_data_into_file(file_name, info_to_write):
     file.close()
 
 
-def check_sample_info_in_lists(list1, list2):
-    sample_info = []
+def check_same_info_in_lists(list1, list2):
+    same_info = []
     for elem in list1:
         if elem in list2:
-            sample_info.append(elem)
-    return sample_info
+            same_info.append(elem)
+    return same_info
 
+
+def check_diff_info_in_lists(list1, list2):
+    diff_info = []
+    for elem in list1:
+        if elem not in list2:
+            diff_info.append(elem)
+    return diff_info
 
 def main(file1_name, file2_name):
-    print(read_data_from_the_file(file1_name))
-    print(read_data_from_the_file(file2_name))
+    print("Hello world")
 
 
 if __name__ == '__main__':
